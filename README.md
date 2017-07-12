@@ -1,6 +1,14 @@
 # chromecast-inspirobot
 Calls inspirobot every 20 seconds.  Nice background for your chromecast.
 
+## Usage
+
+Just open main.html with Chrome.
+
+Click the cast button.
+
+Choose your chromecast device.
+
 ## Change update time
 
 To change the update time, change the 20000 in this line to the number of milliseconds between refreshes.
