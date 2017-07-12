@@ -1,0 +1,32 @@
+<head>
+<!-- <script src="jquery-3.2.1.min.js"></script> -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+</head>
+<center>
+	<div>
+		<iframe src="" name="iframe_a" width=650 height=650 align="center" frameborder=0>
+		</iframe>
+	</div>
+</center>
+<!-- html button designing and calling the event in javascript -->
+<!-- <center><input id="btntest" type="button" value="Check" 
+       onclick="return load_new_inspiration()" /></center> -->
+
+<script language="javascript" type="text/javascript">
+
+	load_new_inspiration();
+	setInterval(load_new_inspiration, 20000);
+
+	function load_new_inspiration() 
+	{
+	    var response = $.get('http://inspirobot.me/api?generate=true');
+		setTimeout(function()
+		{
+		    var new_image_url = response.responseText;
+		    console.log(new_image_url);
+		    // window.location.href = new_image_url;
+		    window.frames['iframe_a'].location = new_image_url;
+		}, 1000);
+	}
+</script>
